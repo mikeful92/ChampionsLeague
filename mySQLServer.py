@@ -34,7 +34,7 @@ query = """SELECT t1.MID,t1.TID, t1.TGoals, t2.Against AS Opponent, t2.TGoals as
 cursor.execute(query,(tID,tID,tID,tID,tID,tID,tID,tID)
 
 for (t1.MID, t1.TID, t1.TGoals, Opponent, OppenentGoals) in cursor:
-    print("{} {} {} {} {}".format(t1.MID, t1.TID, t1.TGoals, Opponent, OppenentGoals))
+    print(t1.MID, t1.TID, t1.TGoals, Opponent, OppenentGoals)
 
 cursor.close()
 connection.close()
