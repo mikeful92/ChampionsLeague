@@ -1,6 +1,6 @@
 import mysql.connector
 
-databaseName = "ChampionsLeague"
+databaseName = "champions_league"
 userID = "root"
 pwd = "root"
 
@@ -31,7 +31,7 @@ query = """SELECT t1.MID,t1.TID, t1.TGoals, t2.Against AS Opponent, t2.TGoals as
             WHERE ms.Team2 = %s AND mr.PID NOT in (SELECT PID FROM TeamRoster WHERE TID = %s) 
             GROUP BY mr.MID, ms.Team2, ms.Team1) t2 ON t1.MID = t2.MID"""
 
-cursor.execute(query,tID)
+cursor.execute(query,(tID,tID,tID,tID,tID,tID,tID,tID)
 
 for (t1.MID, t1.TID, t1.TGoals, Opponent, OppenentGoals) in cursor:
     print("{} {} {} {} {}".format(t1.MID, t1.TID, t1.TGoals, Opponent, OppenentGoals))
